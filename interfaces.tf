@@ -1,21 +1,16 @@
-resource "fortios_system_interface" "VLAN_300" {
-  ip           = "192.168.10.1 255.255.255.0"
-  name         = "VLAN_300"
-  type         = "vlan"
-  vdom         = "root"
-  description  = "PUSHED BY POC IAC TERRAFORM"
-  vlanid       = 300
-  allowaccess  =  "ping"
-  interface    = "lan"
+locals {
+  vlans = jsondecode(file("${path.module}/data-source/fw-vlans-intended.json"))
 }
 
-resource "fortios_system_interface" "VLAN_301" {
-  ip           = "192.168.11.1 255.255.255.0"
-  name         = "VLAN_301"
+resource "fortios_system_interface" "VLANS" {
+  for_each = { for vlan in local.vlans : vlan.name => vlan }
+
+  name    = each.value.name
+  ip           = each.value.ip
   type         = "vlan"
   vdom         = "root"
   description  = "PUSHED BY POC IAC TERRAFORM"
-  vlanid       = 301
+  vlanid       = each.value.vlanid
   allowaccess  = "ping"
   interface    = "lan"
 }

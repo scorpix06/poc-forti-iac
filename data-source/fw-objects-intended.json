@@ -1,0 +1,12 @@
+[
+  {
+    "name": "H_IAC-2",
+    "subnet": "192.168.10.100 255.255.255.255",
+    "comment": "PUSHED BY POC IAC TERRAFORM"
+  },
+  {
+    "name": "H_IAC-1",
+    "subnet": "192.168.11.100 255.255.255.255",
+    "comment": "PUSHED BY POC IAC TERRAFORM"
+  }
+]
