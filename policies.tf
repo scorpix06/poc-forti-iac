@@ -8,10 +8,9 @@ resource "fortios_firewall_policy" "policies" {
   depends_on = [
     fortios_system_interface.VLANS,
     fortios_firewall_object_address.addresses,
-    fortios_firewallservice_custom.trname
+    fortios_firewallservice_custom.services
 
   ]
-
 
   action             = each.value.action
   name               = each.value.name
