@@ -1,0 +1,14 @@
+[
+  {
+    "action": "allow",
+    "name": "IAC-POLICY1",
+    "dstintf":"VLAN_301",
+    "srcintf": "VLAN_300",
+    "comment": "PUSHED BY POC IAC TERRAFORM",
+    "schedule": "always",
+    "srcaddr": "H_IAC-1",
+    "dstaddr": "H_IAC-2",
+    "service": "S_TCP/443"
+  }
+]
+
