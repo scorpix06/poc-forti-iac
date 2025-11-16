@@ -1,0 +1,8 @@
+[
+    {
+        "name": "S_TCP/443",
+        "port": 443,
+        "comment": "PUSHED BY POC IAC TERRAFORM"
+    }
+
+]
